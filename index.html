@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Bucin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to right, #ffd6e8, #ffe4cc);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    nav {
+      width: 100%;
+      background-color: #fff0f5;
+      padding: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #e65c9e;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      display: none;
+      padding: 2rem;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      margin: 2rem auto;
+      position: relative;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .card h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #e65c9e;
+    }
+
+    .card p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .bear-sticker {
+      width: 100px;
+      position: absolute;
+      top: -50px;
+      right: -30px;
+      transform: rotate(15deg);
+      animation: rotateBear 5s linear infinite;
+    }
+
+    @keyframes rotateBear {
+      0% { transform: rotate(15deg); }
+      50% { transform: rotate(-5deg); }
+      100% { transform: rotate(15deg); }
+    }
+
+    .btn-love {
+      background-color: #e65c9e;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-love:hover {
+      background-color: #d14c8a;
+      transform: scale(1.05);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin: 3rem 0 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .fruit {
+      position: absolute;
+      width: 40px;
+      animation: fall 6s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% { top: -50px; opacity: 0; }
+      20% { opacity: 1; }
+      100% { top: 100vh; opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#" onclick="showSection('home')">Halaman Utama</a>
+    <a href="#" onclick="showSection('galeri')">Galeri si pendek</a>
+  </nav>
+
+  <div id="home" class="section active">
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Bear Sticker" class="bear-sticker">
+      <h1>Hai Kamu 💗</h1>
+      <p>
+        Di antara jutaan bintang, kamu tetap yang paling bersinar di mataku. Setiap pagi, kamu alasan aku senyum. Kalau hati ini taman, kamu bunga yang paling indah tumbuh di dalamnya.
+      </p>
+      <button class="btn-love" onclick="alert('Aku sayang kamu 🧸💘')">Aku Juga Sayang Kamu!</button>
+    </div>
+
+    <!-- Buah animasi -->
+    <img src="https://cdn-icons-png.flaticon.com/512/590/590685.png" class="fruit" style="left: 20%; animation-delay: 0s;">
+    <img src="https://cdn-icons-png.flaticon.com/512/590/590686.png" class="fruit" style="left: 50%; animation-delay: 2s;">
+    <img src="https://cdn-icons-png.flaticon.com/512/590/590687.png" class="fruit" style="left: 75%; animation-delay: 4s;">
+  </div>
+
+  <div id="galeri" class="section">
+    <h2 style="color:#e65c9e">Galeri kamuu 📸</h2>
+    <div class="gallery">
+      <img src="poto/Gambar WhatsApp 2025-05-03 pukul 17.45.03_b02047fa.jpg" alt="Kenangan 1">
+      <img src="poto/Gambar WhatsApp 2025-05-03 pukul 17.45.03_70dee484.jpg" alt="Kenangan 2">
+      <img src="poto/Gambar WhatsApp 2025-05-03 pukul 17.45.02_b9bbc32e.jpg" alt="Kenangan 3">
+    </div>
+  </div>
+
+  <footer>
+    Dibuat oleh rizz si ganteng untuk hanii. 🌸
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>

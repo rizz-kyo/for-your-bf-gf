@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #ffe6e6, #ffd6d6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .gift-wrapper {
+    position: relative;
+    width: 120px;
+    height: 100px;
+    margin: 30px auto;
+    cursor: pointer;
+  }
+  
+  .gift-box {
+    width: 100%;
+    height: 100%;
+    background: #ff5c8a;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+  }
+  
+  .gift-lid {
+    width: 100%;
+    height: 40px;
+    background: #ff3366;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    transition: transform 0.8s ease;
+    transform-origin: bottom center;
+  }
+  
+  .gift-lid.open {
+    transform: rotateX(120deg) translateY(-60px);
+  }
+  
+  #message {
+    margin-top: 20px;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.6s ease;
+  }
+  
+  #message.show-message {
+    animation: messagePop 0.7s ease forwards;
+  }
+  
+  
+  .hidden {
+    display: none;
+  }
+  @keyframes messagePop {
+    0% {
+      transform: scale(0.5) translateY(30px);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.05) translateY(-5px);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+    
